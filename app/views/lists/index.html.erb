@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.pocketwanderings.com/wp-content/uploads/2021/10/Backyard-Cinema-Wandsworth-1-1.jpeg);">
+  <div class="container">
+  <h1>Watch lists</h1>
+  <%= link_to '<a class="btn btn-ghost" href="#">New list</a>'.html_safe, new_list_path %>
+  </div>
+</div>
+
+<div class="cards">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list) do %>
+      <div class="card-category">
+      <%= list.name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
